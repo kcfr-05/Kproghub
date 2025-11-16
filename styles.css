@@ -1,0 +1,258 @@
+body {
+    background-color: hsl(49, 88%, 60%);
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    overflow-y: scroll;
+}
+* h1 {
+    color: white;
+    font-size: 42px;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-align: center;
+} *
+.nav-button {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 24px;
+    display: none;
+}
+.nav-button:focus {
+    color: rgb(0, 195, 255);
+}
+.logo {
+    max-width: 100px;
+    margin-left: 30px;
+}
+.main-header {
+    display: flex;
+    flex-direction: row;
+    background-color: #44c2e959;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.shop-nav {
+    width: 100%;
+    background-color:#4a3d28;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    flex-wrap: wrap;
+}
+.shop-nav a {
+    color: #ffe3b3;
+    text-decoration: none;
+    padding: 10px;
+}
+.shop-nav a:hover {
+    background-color: #ffe3b3;
+    color: #4a3d28;
+}
+.user-nav a {
+    font-size: 32pt;
+    text-decoration: none;
+    color: #4a3d28;
+}
+.user-nav {
+    margin-right: 30px;
+}
+.search {
+    display: flex;
+    min-width: 400px;
+
+}
+.search input {
+    flex: 1;
+    padding: 10px;
+}
+.slide {
+    background-color: #91ddeb;
+    min-height: 50vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.slide:nth-child(1) {
+    background-image: url("/images/slides/collection_progear-bikes.webp");
+    background-color: aquamarine;
+}
+.slide:nth-child(2) {
+    background-image: url("/images/slides/slide\ 2.jpeg");
+    background-color: aquamarine;
+}
+.slide:nth-child(3) {
+     background-image: url("/images/slides/slide\ 3.jpg");
+    background-color: aquamarine;
+}
+.slide:nth-child(4) {
+     background-image: url("/images/slides/slide4-1.webp");
+    background-color: aquamarine;
+}
+.slide h2 {
+    color: white;
+    font-size: 4em;
+    text-shadow: 0px 0px 1px black;
+    margin: 12pt auto;
+}
+.slide-button {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 12pt;
+    border-radius: 8pt;
+}
+.content {
+   margin: 3em auto;
+   max-width: 80vw;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 12pt;
+}
+.card img {
+    max-width: 100%;
+}
+.card {
+    flex: 1;
+    min-width: 360px;
+    background-color: #eeeeee;
+    border: 1px solid black;
+    border-radius: 6pt;
+    overflow: hidden;
+}
+.card-content {
+    padding: 12pt;
+}
+.card-button {
+    text-decoration: none;
+    background-color: aliceblue;
+    border: 1px solid black;
+    display: block;
+    margin: auto;
+    padding: 6pt;
+    text-align: center;
+    border-radius: 6pt;
+    color: black;
+}
+.banner {
+    width: 100%;
+    background: linear-gradient( to right, rgb(161, 186, 240),rgb(114, 211, 235));
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12pt;
+}
+.social a {
+    text-decoration: none;
+    font-size: 18pt;
+    color: black;
+}
+.main-footer {
+    min-height: 20vh;
+    background-color: #eeeeee;
+    padding: 12pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16pt;
+}
+.footer-nav a {
+    color: black;
+    text-decoration: none;
+}
+#contact {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+}
+#contact input {
+    margin-bottom: 1em;
+    padding: 5px;
+}
+.form-button {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    align-self: center;
+    min-width: 200px;
+}
+
+/* responsive styles */
+@media screen and (max-width:480px) {
+    .main-header {
+        position: relative;
+    }
+    .nav-button {
+        display: block;
+    }
+    .shop-nav {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        z-index: 99;
+        min-height: 100vh;
+        padding-top: 10px;
+        box-sizing: border-box;
+        gap: 15px;
+        padding-left: 5px;
+        left: -100%;
+        transition: left 0.2s;
+    }
+    .shop-nav.open {
+        left: 0px;
+    }
+    .logo {
+        max-width: 40px;
+        margin-left: 0px;
+    }
+    .search button {
+        display: none;
+    }
+    .search {
+        min-width: auto;
+    }
+    .user-nav {
+        margin-right: 0px;
+    }
+    .card {
+        min-width: 50%;
+    }
+    .content {
+        max-width: 90vw;
+    }
+
+}
+.product-img {
+    width: 100%;
+    height: 300px;        
+    object-fit: cover;  
+    border-radius: 8px; 
+}
+.product-imgs {
+    width: 100%;
+    height: 500px;        
+    object-fit: cover;  
+    border-radius: 8px; 
+}
