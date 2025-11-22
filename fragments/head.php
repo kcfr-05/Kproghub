@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <title>Progear Hub</title>
     <link rel="icon" href="icon.png">

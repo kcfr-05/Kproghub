@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-    
 <footer class="main-footer">
         <nav class="social">
             <a href="https://facebook.com">
