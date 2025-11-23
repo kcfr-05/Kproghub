@@ -14,7 +14,7 @@
             </a>
         </nav>
         <nav class="footer-nav">
-            <a href="contact.html">Contact</a>
+            <a href="contact.php">Contact</a>
             <a href="terms.html">Terms</a>
             <a href="support.html">Support</a>
             <a href="policies.html">Policies</a>
