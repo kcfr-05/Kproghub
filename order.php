@@ -2,19 +2,23 @@
 // check for form submission
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     // get data from form
-    $name = $_POST['name'];
+    $name = $_POST['customer_name'];
     $email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
-    // insert the data into contact_us table
+    $product_name = $_POST['product_name'];
+    $quantity = $_POST['quantity'];
+    $price = $_POST['price'];
+    //$total_price = $quantity * $price:
+    
+    // insert the data into oder form table
     // SQL query
-    $query = "INSERT INTO contact_us (name,email,subject,message,submitted_at)
-            VALUES(?,?,?,?,NOW() )
+    $query = "INSERT INTO orders (customer_name,email,product_name,quantity,price,order_date)
+            VALUES(?,?,?,?,?,NOW() )
     ";
     $statement = $connection -> prepare($query);
-    $statement -> bind_param("ssss",$name,$email,$subject,$message);
+    $statement -> bind_param("sssid",$name,$email,$product_name,$quantity,$price);
     if( !$statement -> execute() ) {
         // there's an error
+         echo $connection -> error;
     }
 }
 ?>
@@ -38,16 +42,18 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <main class="content">
         <div class="card">
             <div class="card-content">
-                <form id="contact" method="post" action="/contact.php">
-                    <h1>Contact Us</h1>
-                    <label for="name">Name</label>
-                    <input required id="name" name="name" type="text" placeholder="Gemma Smith">
+                <form id="contact" method="post" action="/order.php">
+                    <h1>Oder Form</h1>
+                    <label for="customer_name">Customer_Name</label>
+                    <input required id="customer_name" name="customer_name" type="text" placeholder="Gemma Smith">
                     <label for="email">Email</label>
                     <input required id="email" name="email" type="email" placeholder="gemma@example.com">
-                    <label for="subject">Subject</label>
-                    <input required id="subject" name="subject" type="text" placeholder="inquiry">
-                    <label for="message">Message</label>
-                    <textarea required id="message" name="message" rows="5" cols="30" placeholder="Hello there"></textarea>
+                    <label for="product_name">Product Name</label>
+                    <input required id="product_name" name="product_name" type="product_name" placeholder="inquiry">
+                    <label for="quantity">Quantity</label>
+                    <input require id="quantity" name="quantity" type="number" min="1" value="-1">
+                    <label for="price">Price</label>
+                    <input require id="price" name="price" type="number" min="0.99" step="0.5" value="1.99">
                     <button type="submit" class="form-button">Send</button>
                 </form>
             </div>
