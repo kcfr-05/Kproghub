@@ -11,7 +11,7 @@ if(!$connection) {
     exit();
 }
 else{
-    echo "database connection is successful";
+    //echo "database connection is successful";
 
 }
 ?>
